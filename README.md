@@ -1,12 +1,39 @@
-- 基于 pnpm 搭建 monorepo 工程目录结构
-- 初始化 npm 配置
-- 安装公共依赖
-- 给每个子包配置 vite.config.ts，并且配置不用打包外部依赖
-- 设置整体构建脚本指令
-- 搭建 demo 应用演示组件效果
-- 集成 Typescript，按照代码用途的区别（node 脚本和源码）划分不同的 tsconfig 配置，demo 应用独立设置
-- 设置 tsconfig，使得 IDE 将内部依赖解析到对应的源码而非产物
-- 设置 vite.config.ts 使得 demo 项目实现了热更新-修改其依赖的组件源码，能够立即反馈在页面上
-- 使用 tsc 为普通子项目生成类型生，使用 vue-tsc 为 vue 子项目生成类型声明
-- 实现脚本：将 vue-tsc 集中生成的声明文件移动到对应模块的产物目录下
-- 通过 npm script 加入清理产物、类型检查、导出类型声明的步骤
+- [初始化 monorepo 工程](https://juejin.cn/post/7254369672823586873#heading-23)
+  - 创建项目结构
+  - 设置 package.json
+- [基本依赖安装](https://juejin.cn/post/7257519248053436473#heading-2)
+  - 初始化 npm 配置
+  - 安装公共依赖
+- [Vite 集成](https://juejin.cn/post/7257519248053436473#heading-5)
+  - 给每个子包配置 vite.config.ts
+  - 抽离外部依赖
+  - 设置整体构建脚本指令
+- [搭建 demo 应用演示组件效果](https://juejin.cn/post/7257519248053436473#heading-15)
+  - 设置 vite.config.ts 使得 demo 项目实现了热更新-修改其依赖的组件源码，能够立即反馈在页面上
+- [集成 TypeScript](https://juejin.cn/post/7257517788205367351#heading-2)
+  - 按照代码用途的区别（node 脚本和源码）划分不同的 tsconfig 配置，demo 应用独立设置
+  - 设置 tsconfig，使得 IDE 将内部依赖解析到对应的源码而非产物
+  - 生成 d.ts 类型声明产物
+    - 实现脚本：将 vue-tsc 集中生成的声明文件移动到对应模块的产物目录下
+  - 通过 npm script 加入清理产物、类型检查、导出类型声明的步骤
+- 集成 Lint 工具
+  - [集成 ESLint](https://juejin.cn/post/7260499321983336509#heading-2)
+    - 配置 ESLint 继承 Airbnb规则预设、提供 Vue 语法解析、提供 TypeScript 语法解析，TypeScript 规则集
+    - 配置 ESLint 需要忽略的内容
+    - 根目录增加 eslint 检查的脚本
+    - 为配置文件如 .eslintrc.js 提供单独的 tsconfig.json
+  - [集成 StyleLint](https://juejin.cn/post/7260499321983336509#heading-6)
+    - 配置 sass 规则集、vue 文件规则集、css 属性排序规则、风格相关规则
+    - 配置 StyleLint 需要忽略的内容
+    - 根目录增加 stylelint 检查的脚本
+  - [集成 Prettier](https://juejin.cn/post/7260499321983336509#heading-7)
+    - 使用 Prettier 完成 ESLint、StyleLint 不支持的文件类型的格式化
+    - 配置 Prettier
+    - 配置 Prettier 需要忽略的内容
+  - [Lint 工具与 IDE 插件结合](https://juejin.cn/post/7260499321983336509#heading-8)
+    - 配置引导安装 ESLint、StyleLint、Prettier 插件
+    - 配置 settings.json，使 IDE 自动修复错误
+  - [集成 CommitLint](https://juejin.cn/post/7260499321983336509#heading-9)
+    - 配置继承默认规范集
+    - 通过 husky 集成到 Git hooks 中
+    - 通过 lint-staged 实现增量检查
