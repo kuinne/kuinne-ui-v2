@@ -1,0 +1,11 @@
+{
+  "name": "@kuinne/demo",
+  "private": true,
+  "scripts": {
+    "dev": "vite dev"
+  },
+  "dependencies": {
+    "@kuinne/ui": "workspace:^"
+  },
+  "devDependencies": {}
+}

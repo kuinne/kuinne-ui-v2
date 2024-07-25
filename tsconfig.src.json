@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "composite": true,
+    // 组件库依赖浏览器的 DOM API
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "types": ["node"]
+  },
+  // 包含了 typings/env.d.ts，这是为了让 TypeScript 对于 Vite 的一些特定功能提供类型定义(https://cn.vitejs.dev/guide/env-and-mode#intellisense)
+  "include": ["typings/env.d.ts", "packages/**/src"]
+}

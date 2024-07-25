@@ -1,0 +1,46 @@
+// https://chatgpt.com/g/g-2DQzU5UZl-code-copilot/c/e2368429-31d7-4711-adeb-8575ae399dc3
+{
+  "compilerOptions": {
+    // 编译器的工作目录
+    "rootDir": ".",
+    // 用于解析非相对模块名称的基准目录。非相对模块是指那些没有以 ./、../ 或 / 开头的模块路径。
+    "baseUrl": ".",
+    // tsc 编译产物输出的目录
+    "outDir": "dist",
+    // 编译目标 js 的版本
+    "target": "ES2022",
+    // 指定编译后的JavaScript模块系统
+    "module": "ESNext",
+    // 模块解析策略
+    "moduleResolution": "node",
+    // 是否生成辅助 debug 的 .map.js 文件
+    "sourceMap": false,
+    // 产物不消除注释
+    "removeComments": false,
+    // 严格哦是类型检查，建议开启
+    "strict": true,
+    // 不允许有未使用的变量
+    "noUnusedLocals": true,
+    // 允许引入 .json 模块
+    "resolveJsonModule": true,
+
+    // 与 esModuleInterop: true 配合允许从 commonjs 的依赖中直接按 import XX from 'xxx' 的方式导出 default 模块。
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+
+    // 在使用 const enum 或隐式类型导入时受到 TypeScript 的警告
+    "isolatedModules": true,
+    // 检查类型时是否跳过类型声明文件， 一般在上游依赖存在类型问题时置为 true。
+    "skipLibCheck": true,
+    // 引入 ES 的功能库
+    "lib": [],
+    // 显用于指定哪些包中的类型声明文件应该包含在编译中，默认情况下，TypeScript会自动包含node_modules/@types目录下的所有类型声明文件
+    "types": [],
+    // 定包含类型声明文件的文件夹。默认情况下，typeRoots包含node_modules/@types文件夹
+    // "typeRoots": ["./types", "./node_modules/@types"],
+    // 路径别名设置
+    "paths": {
+      "@kuinne/*": ["packages/*/src"]
+    }
+  }
+}

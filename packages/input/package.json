@@ -1,0 +1,44 @@
+{
+  "name": "@kuinne/input",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [
+    "vue",
+    "ui",
+    "components library"
+  ],
+  "author": "kuinne",
+  "license": "MIT",
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": {
+    "url": ""
+  },
+  "scripts": {
+    "build": "vite build",
+    "test": "echo test"
+  },
+  "main": "./dist/kuinne-input.umd.js",
+  "module": "./dist/kuinne-input.mjs",
+  "types": "./dist/index.dts",
+  "exports": {
+    ".": {
+      "require": "./dist/kuinne-input.umd.js",
+      "module": "./dist/kuinne-input.mjs",
+      "types": "./dist/index.dts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "peerDependencies": {
+    "vue": ">=3.0.0"
+  },
+  "dependencies": {
+    "@kuinne/shared": "workspace:^"
+  }
+}
