@@ -23,12 +23,12 @@
   },
   "main": "./dist/kuinne-shared.umd.js",
   "module": "./dist/kuinne-shared.mjs",
-  "types": "./dist/index.dts",
+  "types": "./dist/src/index.d.ts",
   "exports": {
     ".": {
       "require": "./dist/kuinne-shared.umd.js",
-      "module": "./dist/kuinne-shared.mjs",
-      "types": "./dist/index.dts"
+      "import": "./dist/kuinne-shared.mjs",
+      "types": "./dist/src/index.d.ts"
     }
   },
   "files": [

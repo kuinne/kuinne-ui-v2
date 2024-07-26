@@ -23,12 +23,12 @@
   },
   "main": "./dist/kuinne-input.umd.js",
   "module": "./dist/kuinne-input.mjs",
-  "types": "./dist/index.dts",
+  "types": "./dist/src/index.d.ts",
   "exports": {
     ".": {
       "require": "./dist/kuinne-input.umd.js",
-      "module": "./dist/kuinne-input.mjs",
-      "types": "./dist/index.dts"
+      "import": "./dist/kuinne-input.mjs",
+      "types": "./dist/src/index.d.ts"
     }
   },
   "files": [

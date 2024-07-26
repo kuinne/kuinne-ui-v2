@@ -74,8 +74,9 @@ module.exports = defineConfig({
   overrides: [
     // 对于 vite 和 vitest 的配置文件，不对 console.log 进行错误提示
     {
-      files: ['**/vite.config.*', '**/vitest.config.*'],
+      files: ['**/vite.config.*', '**/vitest.config.*', 'scripts/**'],
       rules: {
+        'import/no-relative-packages': 'off',
         'no-console': 'off',
       },
     },

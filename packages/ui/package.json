@@ -18,17 +18,20 @@
     "url": ""
   },
   "scripts": {
-    "build": "vite build",
+    "build:package": "vite build --mode package",
+    "build:full": "vite build --mode full",
+    "build:full-min": "vite build --mode full-min",
+    "build": "pnpm run build:package && pnpm run build:full && pnpm run build:full-min",
     "test": "echo test"
   },
   "main": "./dist/kuinne-ui.umd.js",
   "module": "./dist/kuinne-ui.mjs",
-  "types": "./dist/index.dts",
+  "types": "./dist/src/index.d.ts",
   "exports": {
     ".": {
       "require": "./dist/kuinne-ui.umd.js",
-      "module": "./dist/kuinne-ui.mjs",
-      "types": "./dist/index.dts"
+      "import": "./dist/kuinne-ui.mjs",
+      "types": "./dist/src/index.d.ts"
     }
   },
   "files": [
