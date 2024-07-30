@@ -37,3 +37,6 @@
     - 配置继承默认规范集
     - 通过 husky 集成到 Git hooks 中
     - 通过 lint-staged 实现增量检查
+  - [定制打包体系](https://juejin.cn/post/7263829911398449208#heading-15)
+    - 公共配置提取(lib, external, plugins)
+    - 集成打包体系（构建纯JS/TS模块、构建Vue组件模块、构建组件库主包）
