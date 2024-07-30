@@ -23,6 +23,6 @@
 //   },
 // });
 
-import { generateVueConfig } from '../build/build.config';
+import { generateVueConfig } from '../build/scripts';
 
 export default generateVueConfig();

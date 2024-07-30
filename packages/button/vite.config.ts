@@ -22,6 +22,11 @@
 //     minify: false,
 //   },
 // });
-import { generateVueConfig } from '../build/build.config';
 
-export default generateVueConfig();
+import { generateVueConfig } from '../build/scripts';
+
+export default generateVueConfig({
+  presetKuinneuiOptions: {
+    include: ['button'],
+  },
+});

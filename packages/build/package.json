@@ -22,14 +22,15 @@
     "test": "echo test"
   },
   "main": "./dist/kuinne-build.umd.js",
-  "module": "./dist/kuinne-build.mjs",
+  "module": "./dist/src/index.d.ts",
   "types": "./dist/src/index.d.ts",
   "exports": {
     ".": {
       "require": "./dist/kuinne-build.umd.js",
       "import": "./dist/kuinne-build.mjs",
       "types": "./dist/src/index.d.ts"
-    }
+    },
+    "./*": "./*"
   },
   "files": [
     "dist",

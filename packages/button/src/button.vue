@@ -1,26 +1,38 @@
 <script setup lang="ts">
-import { hello } from '@kuinne/shared';
+import { computed } from 'vue';
+import { ButtonProps, defaultButtonProps } from './button';
 
 const props = withDefaults(
-  defineProps<{
-    text?: string;
-  }>(),
-  {
-    text: 'World',
-  },
+  defineProps<ButtonProps>(),
+  defaultButtonProps(),
 );
 
-function clickHandler() {
-  hello(props.text);
-}
+const classes = computed(() => {
+  const result: string[] = [];
+
+  if (props.type) {
+    result.push(`ke-button--${props.type}`);
+  }
+
+  if (props.plain) {
+    result.push('ke-button--plain');
+  }
+
+  if (props.disabled) {
+    result.push('ke-button--disabled');
+  }
+
+  return result;
+});
+
 </script>
 
 <template>
   <button
-    class="kuinne-button"
-    @click="clickHandler"
+    class="ke-button"
+    :class="classes"
   >
-    222<slot />
+    <slot />
   </button>
 </template>
 

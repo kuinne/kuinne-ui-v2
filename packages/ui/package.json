@@ -25,14 +25,16 @@
     "test": "echo test"
   },
   "main": "./dist/kuinne-ui.umd.js",
-  "module": "./dist/kuinne-ui.mjs",
+  "module": "./dist/src/index.d.ts",
   "types": "./dist/src/index.d.ts",
   "exports": {
     ".": {
       "require": "./dist/kuinne-ui.umd.js",
       "import": "./dist/kuinne-ui.mjs",
       "types": "./dist/src/index.d.ts"
-    }
+    },
+    "./*": "./*",
+    "./style/*": "./dist/style/*"
   },
   "files": [
     "dist",
@@ -43,7 +45,9 @@
   },
   "dependencies": {
     "@kuinne/button": "workspace:^",
+    "@kuinne/config-provider": "workspace:^",
     "@kuinne/input": "workspace:^",
-    "@kuinne/shared": "workspace:^"
+    "@kuinne/shared": "workspace:^",
+    "@kuinne/styles": "workspace:^"
   }
 }

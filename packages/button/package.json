@@ -22,14 +22,16 @@
     "test": "echo test"
   },
   "main": "./dist/kuinne-button.umd.js",
-  "module": "./dist/kuinne-button.mjs",
+  "module": "./dist/src/index.d.ts",
   "types": "./dist/src/index.d.ts",
   "exports": {
     ".": {
       "require": "./dist/kuinne-button.umd.js",
       "import": "./dist/kuinne-button.mjs",
       "types": "./dist/src/index.d.ts"
-    }
+    },
+    "./*": "./*",
+    "./style.css": "./dist/style.css"
   },
   "files": [
     "dist",

@@ -22,14 +22,15 @@
     "test": "echo test"
   },
   "main": "./dist/kuinne-shared.umd.js",
-  "module": "./dist/kuinne-shared.mjs",
+  "module": "./dist/src/index.d.ts",
   "types": "./dist/src/index.d.ts",
   "exports": {
     ".": {
       "require": "./dist/kuinne-shared.umd.js",
       "import": "./dist/kuinne-shared.mjs",
       "types": "./dist/src/index.d.ts"
-    }
+    },
+    "./*": "./*"
   },
   "files": [
     "dist",

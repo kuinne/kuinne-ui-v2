@@ -1,8 +1,90 @@
-/* packages/button/src/button.scss */
-.test-class {
-  transition:
-    color 0.15s ease-in-out,
-    background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out,
-    box-shadow 0.15s ease-in-out;
+$button-types: primary, success, warning, danger, info;
+
+@mixin button-type-styles() {
+  @each $type in $button-types {
+    &.ke-button--#{$type} {
+      --ke-button-color: rgb(var(--ke-color-reverse));
+      --ke-button-bg-color: rgb(var(--ke-color-#{$type}));
+      --ke-button-border-color: rgb(var(--ke-color-#{$type}));
+      --ke-button-hover-color: rgb(var(--ke-color-reverse));
+      --ke-button-hover-bg-color: rgb(var(--ke-color-#{$type}-light-3));
+      --ke-button-hover-border-color: rgb(var(--ke-color-#{$type}-light-3));
+      --ke-button-active-color: rgb(var(--ke-color-reverse));
+      --ke-button-active-bg-color: rgb(var(--ke-color-#{$type}-dark-2));
+      --ke-button-active-border-color: rgb(var(--ke-color-#{$type}-dark-2));
+      --ke-button-disabled-color: rgb(var(--ke-color-reverse));
+      --ke-button-disabled-bg-color: rgb(var(--ke-color-#{$type}-light-5));
+      --ke-button-disabled-border-color: rgb(var(--ke-color-#{$type}-light-5));
+    }
+  }
+}
+
+@mixin button-plain-styles() {
+  @each $type in $button-types {
+    &.ke-button--#{$type} {
+      --ke-button-color: rgb(var(--ke-color-#{$type}));
+      --ke-button-bg-color: rgb(var(--ke-color-#{$type}-light-9));
+      --ke-button-border-color: rgb(var(--ke-color-#{$type}-light-5));
+      --ke-button-hover-color: rgb(var(--ke-color-reverse));
+      --ke-button-hover-bg-color: rgb(var(--ke-color-#{$type}));
+      --ke-button-hover-border-color: rgb(var(--ke-color-#{$type}));
+      --ke-button-disabled-color: rgb(var(--ke-color-#{$type}-light-5));
+      --ke-button-disabled-bg-color: rgb(var(--ke-color-#{$type}-light-9));
+      --ke-button-disabled-border-color: rgb(var(--ke-color-#{$type}-light-8));
+    }
+  }
+}
+
+.ke-button {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--ke-button-padding-y) var(--ke-button-padding-x);
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1;
+  color: var(--ke-button-color);
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  background-color: var(--ke-button-bg-color);
+  border-color: var(--ke-button-border-color);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 4px;
+  outline: none;
+
+  &:hover {
+    color: var(--ke-button-hover-color);
+    background-color: var(--ke-button-hover-bg-color);
+    border-color: var(--ke-button-hover-border-color);
+  }
+
+  &:active {
+    color: var(--ke-button-active-color);
+    background-color: var(--ke-button-active-bg-color);
+    border-color: var(--ke-button-active-border-color);
+  }
+
+  @include button-type-styles;
+
+  &.ke-button--plain {
+    --ke-button-hover-color: rgb(var(--ke-color-primary));
+    --ke-button-hover-bg-color: rgb(var(--ke-color-card));
+    --ke-button-hover-border-color: rgb(var(--color-primary));
+
+    @include button-plain-styles;
+  }
+
+  &.ke-button--disabled,
+  &.ke-button--disabled:hover,
+  /* stylelint-disable-next-line selector-class-pattern */
+  &.ke-button--disabled:active {
+    color: var(--ke-button-disabled-color);
+    cursor: not-allowed;
+    background-color: var(--ke-button-disabled-bg-color);
+    border-color: var(--ke-button-disabled-border-color);
+  }
 }
