@@ -40,3 +40,14 @@
   - [定制打包体系](https://juejin.cn/post/7263829911398449208#heading-15)
     - 公共配置提取(lib, external, plugins)
     - 集成打包体系（构建纯JS/TS模块、构建Vue组件模块、构建组件库主包）
+- [组件库样式方案](https://juejin.cn/post/7270861556031045632#heading-19)
+  - 定义主题变量
+  - 颜色计算
+  - CSS 生成
+  - 主题生成
+  - UnoCSS 预设
+  - 实现主题切换
+  - 使用 iconify 实现矢量图标
+- [文档网站](https://juejin.cn/post/7313851652595531810)
+- 建立带有 Demo 示例功能的文档网站
+- 组件 API 文档的自动生成

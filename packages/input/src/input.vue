@@ -1,24 +1,33 @@
 <script setup lang="ts">
 import { hello } from '@kuinne/shared';
+import { ref } from 'vue';
+import {
+  defaultInputProps, InputProps, InputEmits, InputExpose,
+} from './props';
 
 withDefaults(
-  defineProps<{
-    modelValue?: string;
-  }>(),
-  {
-    modelValue: '',
-  },
+  defineProps<InputProps>(),
+  defaultInputProps(),
 );
 
-const emit = defineEmits<{
-  (event: 'update:modelValue', val: string): void;
-}>();
+const emit = defineEmits<InputEmits>();
 
 function inputHandler(e: any) {
   const { value } = e.target;
   emit('update:modelValue', value);
   hello(value);
 }
+
+function clear() {
+  emit('update:modelValue', '');
+}
+
+const a = ref(0);
+
+defineExpose<InputExpose>({
+  clear,
+  a,
+});
 </script>
 
 <template>

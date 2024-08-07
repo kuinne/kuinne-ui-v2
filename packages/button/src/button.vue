@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import { ButtonProps, defaultButtonProps } from './button';
+import { ButtonProps, ButtonSlots, defaultButtonProps } from './props';
 
 const props = withDefaults(
   defineProps<ButtonProps>(),
   defaultButtonProps(),
 );
+
+defineSlots<ButtonSlots>();
 
 const classes = computed(() => {
   const result: string[] = [];

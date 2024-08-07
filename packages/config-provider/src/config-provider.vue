@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { generateCssVars, themeColorLevelsEnabledKeys } from '@kuinne/styles';
-import { ConfigProviderProps, defaultConfigProviderProps } from './config-provider';
+import { ConfigProviderProps, defaultConfigProviderProps } from './props';
 
 const props = withDefaults(defineProps<ConfigProviderProps>(), defaultConfigProviderProps());
 
