@@ -2,6 +2,7 @@
 // demo/src/App.vue
 import {
   Button,
+  Input,
   ConfigProvider,
   KuinneuiCssVarsConfig,
   themeVars,
@@ -111,21 +112,16 @@ function switchSecondLineTheme() {
         切换全局主题，当前：{{ currentSecondLineTheme }}
       </Button>
     </div>
-    <div>
-      <i class="i-ke-alert text-100px c-primary inline-block" />
-      <i class="i-ke-alert-marked text-60px c-success inline-block" />
-    </div>
+    <Input />
   </div>
 </template>
 
-<style lang="scss" scoped>
-.btns {
-  :deep(.op-button) {
-    margin-bottom: 10px;
+<style scoped>
+:deep(.ke-button:not(:first-child)) {
+  margin-left: 10px;
+}
 
-    &:not(:first-child) {
-      margin-left: 10px;
-    }
-  }
+:deep(.ke-button) {
+  margin-bottom: 10px;
 }
 </style>

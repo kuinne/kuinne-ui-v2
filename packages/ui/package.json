@@ -49,5 +49,9 @@
     "@kuinne/input": "workspace:^",
     "@kuinne/shared": "workspace:^",
     "@kuinne/styles": "workspace:^"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
   }
 }

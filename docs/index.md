@@ -13,7 +13,7 @@ hero:
   tagline: 从 0 到 1 搭建 Vue 组件库
   image:
     src: /logo.png
-    alt: OpenX
+    alt: Kuinne
   actions:
     - theme: brand
       text: 指南

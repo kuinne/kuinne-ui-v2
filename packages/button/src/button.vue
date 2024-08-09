@@ -34,7 +34,7 @@ const classes = computed(() => {
     class="ke-button"
     :class="classes"
   >
-    <slot />
+    <slot :type="type" />
   </button>
 </template>
 
