@@ -25,7 +25,6 @@ export function mdDemoPlugin(md: MarkdownIt) {
 
     render(tokens, idx, options, env, self) {
       const token = tokens[idx];
-
       // 不考虑 :::demo 的嵌套情况，碰到深层嵌套直接放弃渲染
       if (token.level > 0) return '';
 
